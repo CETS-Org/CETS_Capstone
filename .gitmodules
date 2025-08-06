@@ -10,3 +10,9 @@
 [submodule "CETS.Worker"]
 	path = CETS.Worker
 	url = https://github.com/Minhaza/CETS.Worker.git
+[submodule "CETS.FE-StudentTeacher"]
+	path = CETS.FE-StudentTeacher
+	url = https://github.com/Minhaza/CETS.FE-StudentTeacher.git
+[submodule "CETS.FE-AdminStaff"]
+	path = CETS.FE-AdminStaff
+	url = https://github.com/Minhaza/CETS.FE-AdminStaff.git
