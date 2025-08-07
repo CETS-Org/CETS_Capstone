@@ -21,7 +21,7 @@ Use this format:
 
 ### Examples
 
-feat(auth): add Google login support
-fix: handle null token on startup
-refactor: extract user validator class
+- feat(auth): add Google login support
+- fix: handle null token on startup
+- refactor: extract user validator class
 
