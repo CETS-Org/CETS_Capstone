@@ -19,12 +19,11 @@ This project is built using a **Hybrid Microservice Architecture** (also known a
 
 *   **Frontend (`ReactJS`):** A modern, single-page application providing a rich user interface.
 *   **API Gateway (`Ocelot`):** A single, unified entry point for the frontend, routing requests to the appropriate backend service and handling cross-cutting concerns.
-*   **The Monolith (`EnglishCenter.Web`):** An ASP.NET Core application responsible for stable, core functionalities:
+*   **The Monolith (`CEST.API.Web`):** An ASP.NET Core application responsible for stable, core functionalities:
     *   **Identity Management** (Authentication & Authorization using ASP.NET Core Identity)
     *   **Course Catalog Management**
     *   **Student/Class Tracking & Reporting**
-*   **The Enrollment Microservice (`Enrollment.API`):** A dedicated, independently scalable ASP.NET Core service that handles the most complex and critical business process:
-    *   **Asynchronous Enrollment Processing:** Manages the entire enrollment workflow from start to finish.
+*   **The AI Microservice (`CEST.AI`):** A dedicated, independently scalable ASP.NET Core service that handles the most complex and critical business process:
     *   **Saga Pattern:** Implements the Choreography Saga pattern to manage distributed transactions across services (e.g., reserving a class spot and processing payment).
     *   **Transactional Outbox:** Ensures reliable, at-least-once event publishing, even in the event of a system crash.
 
@@ -56,11 +55,15 @@ This project is built using a **Hybrid Microservice Architecture** (also known a
 1.  **Start the Backend Infrastructure & Services:**
     From the root of the backend repository, run Docker Compose. This will start the databases, message broker, and all backend services.
     ```bash
-    docker-compose up --build
+    docker compose up -d
     ```
-    The API Gateway will be available at `http://localhost:9000`.
+    Note: If need to remove docker run this:
+    ```bash
+    docker compose down -v
+    ```
+    The API Gateway will be available at `http://localhost:8000`.
 
-2.  **Start the Frontend:**
+3.  **Start the Frontend:**
     Navigate to the frontend repository and start the React development server.
     ```bash
     cd ../CETS.FE-StudentTeacher
